@@ -12,7 +12,10 @@ app.get('/images', (req, res) => {
     const images1 = fs.readdirSync('./images1');
     //make array of absolute paths
     images1.forEach(image => {
-        images.push(`image/images1/${image}`)
+        images.push({ 
+            src: `https://yp-website-api.herokuapp.com/image/images1/${image}`, 
+        original: `https://yp-website-api.herokuapp.com/image/images1/${image}`,
+            tags: [{ value: "Activity 1", title: "Activity 1" }], })
     });
     res.send(images);
 })
@@ -20,6 +23,7 @@ app.get('/images', (req, res) => {
 app.get('/image/:id/:id1', (req, res) => {
     const {id, id1} = req.params;
     const image = fs.readFileSync(`${id}/${id1}`);
+
     //send image
     res.writeHead(200, {'Content-Type': 'image/jpg' });
     res.end(image, 'binary');
