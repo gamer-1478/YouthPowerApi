@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
 const fs = require('fs');
+const cors = require('cors');
+
+//allow all origins
+app.use(cors({
+    origin: '*'
+}));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
