@@ -46,29 +46,29 @@ app.get('/images', (req, res) => {
     });
     images4.forEach(image => {
         images.push({
-            src: `https://yp-website-api.herokuapp.com/image/images1/${image}`,
-            original: `https://yp-website-api.herokuapp.com/image/images1/${image}`,
+            src: `https://yp-website-api.herokuapp.com/image/images4/${image}`,
+            original: `https://yp-website-api.herokuapp.com/image/images4/${image}`,
             tags: [{ value: "Activity 4", title: "Activity 4" }],
         })
     });
     images5.forEach(image => {
         images.push({
-            src: `https://yp-website-api.herokuapp.com/image/images2/${image}`,
-            original: `https://yp-website-api.herokuapp.com/image/images2/${image}`,
+            src: `https://yp-website-api.herokuapp.com/image/images5/${image}`,
+            original: `https://yp-website-api.herokuapp.com/image/images5/${image}`,
             tags: [{ value: "Activity 5", title: "Activity 5" }],
         })
     });
     images6.forEach(image => {
         images.push({
-            src: `https://yp-website-api.herokuapp.com/image/images3/${image}`,
-            original: `https://yp-website-api.herokuapp.com/image/images3/${image}`,
+            src: `https://yp-website-api.herokuapp.com/image/images6/${image}`,
+            original: `https://yp-website-api.herokuapp.com/image/images6/${image}`,
             tags: [{ value: "Activity 6", title: "Activity 6" }],
         })
     });
     images7.forEach(image => {
         images.push({ 
-            src: `https://yp-website-api.herokuapp.com/image/images1/${image}`, 
-        original: `https://yp-website-api.herokuapp.com/image/images1/${image}`,
+            src: `https://yp-website-api.herokuapp.com/image/images7/${image}`, 
+        original: `https://yp-website-api.herokuapp.com/image/images7/${image}`,
             tags: [{ value: "Activity 7", title: "Activity 7" }], })
     });
 
