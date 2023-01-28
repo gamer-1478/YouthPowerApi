@@ -23,6 +23,8 @@ app.get('/images', (req, res) => {
     const images5 = fs.readdirSync('./images5');
     const images6 = fs.readdirSync('./images6');
     const images7 = fs.readdirSync('./images7');
+    const images9 = fs.readdirSync('./images7');
+    const images10 = fs.readdirSync('./images7');
 
     //make array of absolute paths
     images1.forEach(image => {
@@ -72,6 +74,22 @@ app.get('/images', (req, res) => {
         original: `https://yp-website-api.herokuapp.com/image/images7/${image}`,
             tags: [{ value: "Activity 7", title: "Activity 7" }], })
     });
+
+    images9.forEach(image => {
+        images.push({
+            src: `https://yp-website-api.herokuapp.com/image/images9/${image}`,
+            original: `https://yp-website-api.herokuapp.com/image/images9/${image}`,
+            tags: [{ value: "Activity 9", title: "Activity 9" }],
+        })
+    });
+    images10.forEach(image => {
+        images.push({
+            src: `https://yp-website-api.herokuapp.com/image/images10/${image}`,
+            original: `https://yp-website-api.herokuapp.com/image/images10/${image}`,
+            tags: [{ value: "Activity 9", title: "Activity 9" }],
+        })
+    });
+
 
     res.send(images);
 })
