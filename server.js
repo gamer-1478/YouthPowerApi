@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 const fs = require('fs');
 const cors = require('cors');
+require('dotenv').config();
 
 //allow all origins
 app.use(cors({
@@ -83,6 +84,30 @@ app.get('/image/:id/:id1', (req, res) => {
     res.writeHead(200, {'Content-Type': 'image/jpg' });
     res.end(image, 'binary');
 })
+
+// app.get('/imgur-test', async (req, res) => {
+//     //upload all images to imgur using api and then get the links
+//     //then log the links to the console
+
+//     console.log(process.env.CLIENT_ID)
+//     fs.writeFileSync('./test.txt', fs.readFileSync('./images1/1.jpg', 'base64'))
+
+//     var data = new FormData();
+//     data.append('image', 'https://yp-website-api.herokuapp.com/image/images1/IMG_4824-min.JPG');
+//     data.append('type', 'url');
+
+//     fetch('https://api.imgur.com/3/upload', {
+//         method: 'POST',
+//         headers: {
+//             "Authorization": `Client-ID ${process.env.CLIENT_ID}`,
+//         },
+//         body: data
+//     }).then(async res => {
+//         console.log(await res)
+//         return res.json()}).then(json => {
+//         res.send(json)
+//     });
+// })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
